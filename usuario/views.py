@@ -1,23 +1,24 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
-def cadastrar(request):
-    
-    return render(request, 'usuario/cadastrar.html')
+def home(request):
+    return HttpResponse("neymar! neymar! neymar")
 
-    # paa front: returne render(request, 'usurio/cadastrar.html')
-def login (request):
-    return render(request, 'usuario/login.html')    
 
-def logout (request):
-    return render(request, 'usuario/logout.html')
+def criar_usuario(request):
+    pass  
 
-def atualizar (request):
-    pass
+def exibir_usuario(request, user_id):
+    pass  
 
-def exibir (request):
-    pass
+def excluir_usuario(request, user_id):
+    pass  
 
-def excluir (request):
-    pass
+def login(request):
+    pass 
 
+def home(request):
+    return HttpResponse("neymar! neymar! neymar")
+
+
+def logout(request):
+    pass 

@@ -11,7 +11,22 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 import os 
+
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_URL = '/static/'
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,8 +53,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'usuario',
+    "usuario",
+    "plano",
+    "historico",
+
 ]
+
+AUTH_USER_MODEL = "usuario.Usuario"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,17 +77,20 @@ ROOT_URLCONF = 'djangoapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
+        'DIRS': [],  # pastas de templates extras podem ficar vazias
+        'APP_DIRS': True,  # necessário para o admin e apps
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',  # necessário para admin
+                'django.contrib.auth.context_processors.auth',  # necessário para admin
+                'django.contrib.messages.context_processors.messages',  # necessário para admin
             ],
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'djangoapp.wsgi.application'
 
