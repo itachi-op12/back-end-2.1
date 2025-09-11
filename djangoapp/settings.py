@@ -28,6 +28,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
 
 
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "perfil"
+LOGOUT_REDIRECT_URL = "login"
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,14 +82,14 @@ ROOT_URLCONF = 'djangoapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # pastas de templates extras podem ficar vazias
-        'APP_DIRS': True,  # necessário para o admin e apps
+        'DIRS': [],  
+        'APP_DIRS': True,  
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',  # necessário para admin
-                'django.contrib.auth.context_processors.auth',  # necessário para admin
-                'django.contrib.messages.context_processors.messages',  # necessário para admin
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },

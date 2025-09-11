@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil</title>
+</head>
+<body>
+    <h1>Perfil do Usuário</h1>
+    
+    <p><strong>Usuário:</strong> {{ usuario.username }}</p>
+    <p><strong>ID:</strong> {{ usuario.id }}</p>
+    
+    <p><a href="{% url 'logout' %}">Sair</a></p>
+
+</body>
+</html>
